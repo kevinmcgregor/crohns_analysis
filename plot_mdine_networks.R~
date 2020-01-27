@@ -4,9 +4,6 @@ library(igraph)
 library(phyloseq)
 library(mdine)
 
-# BE SURE TO SET YOUR WORKING DIRECTORY:
-# setwd("~")
-
 source("sim_eval_functions.R")
 source('plot_networks.R')
 

@@ -180,24 +180,6 @@ credInt_overlap_lower = function(y, lower.ci, upper.ci, diag=FALSE) {
   return(mean((y[lt] < upper.ci[lt]) & (y[lt] > lower.ci[lt])))
 }
 
-# Function to get area under step function
-# DON'T USE.... FOUND PROBLEM
-area_under_curve <- function(x, y) {
-  if (any(is.nan(x) | is.nan(y))) return(NA)
-  na.ind <- (is.na(x) | is.na(y))
-  x <- x[!na.ind]
-  y <- y[!na.ind]
-  area <- MESS::auc(x, y)
-  # area <- 0
-  # for (i in 2:length(x)) {
-  #   dx <- x[i] - x[i-1]
-  #   fy <- y[i]
-  #   area <- area + dx*fy
-  #   print(c(dx, fy, area))
-  # }
-  return(area)
-}
-
 # Function to scale down matrix based on maximum abs off-diagonal entry
 scale_by_max <- function(x) {
   return(x/max(abs(x)))
